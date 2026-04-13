@@ -1,0 +1,111 @@
+<!-- ================= ABOUT PAGE (CREATE NEW FILE: about.html) ================= -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About - CK</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/about.css">
+
+</head>
+<body>
+
+  <!-- NAVBAR -->
+<div class="nav">
+  <img src="assets/images/kent-signature-logo.png" alt="Kent">
+</div>
+
+<div class="wrap">
+  <div class="grid">
+
+    <div class="visual">
+      <!-- PLACE YOUR IMAGE HERE -->
+     <img src="assets/images/kent-image-1.jpg" alt="Christian Kent">
+    </div>
+
+    <div class="content">
+      <div class="eyebrow">About Christian Kent</div>
+
+      <h1>
+        I tell stories that <span class="highlight">feel real</span>.
+      </h1>
+
+      <p>
+        Focused on shaping moments into something people can actually feel.
+        Not just clean cuts, but rhythm, pacing, and emotion working together.
+      </p>
+
+      <p>
+        Most of my work lives somewhere between cinematic and honest.
+        Whether it’s a brand, a story, or just a simple idea, I try to make it land the way it should.
+      </p>
+
+      <p>
+        Still learning. Still refining. Just trying to make every frame count.
+      </p>
+
+  </div>
+</div>
+
+    <!-- COLLAB FULL WIDTH -->
+  <div class="collab">
+    <h3><span class="highlight"> Legends </span> I got to work with</h3>
+    <div class="logos">
+      <!-- ADD YOUR LOGOS HERE -->
+      <img src="assets/images/BK-logo.png">
+      <img src="assets/images/EMG-logo.png">
+      <img src="assets/images/KE-colored-logoname.png">
+      <img src="assets/images/ARG.png">
+    </div>
+  </div>
+
+<!-- FEATURE -->
+  <div class="featured-project">
+    <div class="fp-header" onclick="toggleProject()">
+      <span>Best Moments</span>
+      <div class="fp-toggle">+</div>
+    </div>
+
+    <div class="fp-content" id="fpContent">
+      <h3>Project for Aerial Recovery</h3>
+
+      <p>
+        Shot and edited on-the-ground coverage during the emergency response to the magnitude 6.9 earthquake that struck Central Cebu on September 30.
+      </p>
+
+      <p>
+        Documented the Aerial Recovery team working alongside Global Empowerment Mission as they delivered life-saving emergency aid to affected communities, capturing critical relief efforts and the impact of rapid humanitarian response.
+      </p>
+  </div>
+
+      <div class="actions">
+        <a href="contact.html" class="btn primary">Let's Create Something</a>
+        <a href="index.html" class="btn">Back</a>
+      </div>
+    </div>
+
+
+</div>
+
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>© 2026 <span>Christian Kent</span>. Crafted with intent.</p>
+</footer>
+
+<script>
+function toggleProject() {
+  const content = document.getElementById("fpContent");
+  const toggle = document.querySelector(".fp-toggle");
+
+  content.classList.toggle("active");
+
+  toggle.textContent = content.classList.contains("active") ? "−" : "+";
+}
+</script>
+
+</body>
+</html>
