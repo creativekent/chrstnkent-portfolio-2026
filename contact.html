@@ -27,11 +27,6 @@
     </div>
 
     <div class="name">Christian Kent</div>
-    <div class="email">
-      <a href="mailto:kent.creative@proton.me" style="color:#ccc; text-decoration:none;">
-        kent.creative@proton.me
-      </a>
-    </div>
 
     <div class="socials">
         <a href="https://www.linkedin.com/in/chrstnkent/" target="_blank" aria-label="LinkedIn">
@@ -61,9 +56,22 @@
       </p>
 
       <p style="margin-top:14px; color:#888; font-size:14px;">
-        Best way to reach me: Instagram or Email
+        Best way to reach me: Instagram, Email, or fill out the form below.
       </p>
     </div>
+
+    <br>
+
+    <form name="contact" method="POST" data-netlify="true" class="contact-form">
+      <input type="hidden" name="form-name" value="contact" />
+
+      <input type="text" name="name" placeholder="Your name" required />
+      <input type="email" name="email" placeholder="Your email" required />
+      <textarea name="message" placeholder="Your message" required></textarea>
+
+      <button type="submit">Send Message</button>
+      
+    </form>
 
     <div class="back">
       <a href="index.html">Back Before I Overshare.</a>

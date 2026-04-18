@@ -62,7 +62,7 @@
       letter-spacing:-1.5px;
     }
 
-    .highlight { color:#6ba36f; }
+    .highlight { color:#FF7B02; }
 
     .stats {
       display:flex;
@@ -117,8 +117,8 @@
     }
 
     .btn-primary {
-      background:#6ba36f;
-      color:#0b0b0b;
+      background:#FF7B02;
+      color:#fff;
       border:none;
     }
 
