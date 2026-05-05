@@ -79,37 +79,100 @@
   </div>
 
 <!-- FEATURE -->
-  <div class="featured-project">
-    <div class="fp-header" onclick="toggleProject()">
+
+<div class="featured-project">
+
+  <!-- PERSONAL PROJECTS -->
+  <div class="fp-item">
+    <div class="fp-header" onclick="toggleProject(this)">
+      <span>Personal Projects</span>
+      <div class="fp-toggle">+</div>
+    </div>
+
+    <div class="fp-content">
+
+      <!-- TikTok section -->
+      <h3>Nik Makino TikTok</h3>
+
+      <div class="fp-video tiktok-thumb">
+        <a href="https://www.tiktok.com/@kentiumx/video/7520517952572067090" target="_blank">
+          <img src="assets/images/nikmakino.png" alt="Nik Makino TikTok">
+
+          <div class="play-overlay">
+            ▶
+          </div>
+        </a>
+      </div>
+
+      <h3>Life lately</h3>
+
+      <div class="fp-video">
+        <iframe 
+          src="https://www.youtube.com/embed/qA6IBhY1DfU?modestbranding=1&rel=0"
+          title="YouTube video player" 
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <p>
+        A visual check-in. A personal update told through motion and moments.
+      </p>
+      <p>
+        My first full animation made in After Effects.
+      </p>
+      <br>
+
+      
+
+      
+    </div>
+
+
+  </div>
+
+
+  <!-- BEST MOMENTS -->
+  <div class="fp-item">
+    <div class="fp-header" onclick="toggleProject(this)">
       <span>Best Moments</span>
       <div class="fp-toggle">+</div>
     </div>
 
-    <div class="fp-content" id="fpContent">
-      <h3>Project for Aerial Recovery</h3>
+      <div class="fp-content" id="fpContent">
+        <h3>Project for Aerial Recovery</h3>
 
-      <div class="fp-image">
-        <img src="assets/thumbnails/documentary-thumbnail.png" alt="Aerial Recovery Project">
+        <div class="fp-image slider">
+          <button class="slider-btn left">&#10094;</button>
+
+          <div class="slider-track">
+            <img src="assets/thumbnails/documentary-thumbnail.png" />
+            <img src="assets/images/AR-1.png" />
+            <img src="assets/images/AR-2.jpg" />
+          </div>
+
+          <button class="slider-btn right">&#10095;</button>
+        </div>
+
+        <p>
+          When the 6.9 earthquake struck Central Cebu, I spent a week on the ground documenting the response alongside Aerial Recovery and Global Empowerment Mission.
+        </p>
+        <p>
+          It wasn’t a paid project. It was something I chose to be part of.
+        </p>
+        <p>
+          Moving through affected communities, I focused on what couldn’t be measured. The urgency, the quiet strength, and the human side of every moment.
+        </p>
+        <p>
+          This piece isn’t just about the response. It’s about what it felt like to be there.
+        </p>
+          
       </div>
-
-      <p>
-        When the 6.9 earthquake struck Central Cebu, I spent a week on the ground documenting the response alongside Aerial Recovery and Global Empowerment Mission.
-      </p>
-      <p>
-        It wasn’t a paid project. It was something I chose to be part of.
-      </p>
-      <p>
-        Moving through affected communities, I focused on what couldn’t be measured. The urgency, the quiet strength, and the human side of every moment.
-      </p>
-      <p>
-        This piece isn’t just about the response. It’s about what it felt like to be there.
-      </p>
-        
-  </div>
 
       <div class="cta">
         <a href="contact.html" class="btn btn-primary">Let's Create Something</a>
-        <a href="index.html" class="btn btn-secondary">Back</a>
+        <a href="index.html" class="btn btn-secondary">Home</a>
       </div>
 
 
@@ -123,25 +186,64 @@
 </footer>
 
 <script>
-function toggleProject() {
-  const content = document.getElementById("fpContent");
-  const toggle = document.querySelector(".fp-toggle");
-  const actions = document.querySelector(".actions");
+function toggleProject(header) {
+  const allItems = document.querySelectorAll(".fp-item");
 
-  content.classList.toggle("active");
+  allItems.forEach(item => {
+    const content = item.querySelector(".fp-content");
+    const toggle = item.querySelector(".fp-toggle");
+
+    if (item !== header.parentElement) {
+      content.style.height = "0px";
+      content.classList.remove("active");
+      toggle.textContent = "+";
+    }
+  });
+
+  const item = header.parentElement;
+  const content = item.querySelector(".fp-content");
+  const toggle = header.querySelector(".fp-toggle");
 
   if (content.classList.contains("active")) {
-    toggle.textContent = "–";
-    actions.style.opacity = "1";
-    actions.style.transform = "translateY(0)";
-  } else {
+    content.style.height = content.scrollHeight + "px"; // lock current height first
+
+    requestAnimationFrame(() => {
+      content.style.height = "0px";
+    });
+
+    content.classList.remove("active");
     toggle.textContent = "+";
-    actions.style.opacity = "0.6";
-    actions.style.transform = "translateY(10px)";
+  } else {
+    content.classList.add("active");
+
+    const fullHeight = content.scrollHeight;
+    content.style.height = fullHeight + "px";
+
+    toggle.textContent = "–";
   }
 }
 
-</script>
+const track = document.querySelector('.slider-track');
+  const slides = document.querySelectorAll('.slider-track img');
+  const nextBtn = document.querySelector('.slider-btn.right');
+  const prevBtn = document.querySelector('.slider-btn.left');
 
+  let index = 0;
+
+  function updateSlide() {
+    track.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  nextBtn.addEventListener('click', () => {
+    index = (index + 1) % slides.length;
+    updateSlide();
+  });
+
+  prevBtn.addEventListener('click', () => {
+    index = (index - 1 + slides.length) % slides.length;
+    updateSlide();
+  });
+
+</script>
 </body>
 </html>
