@@ -21,6 +21,8 @@
 
 </head>
 <body>
+<div class="custom-cursor-ring" aria-hidden="true"></div>
+<div class="custom-cursor-dot" aria-hidden="true"></div>
 
   <!-- NAVBAR -->
 <div class="nav">
@@ -243,6 +245,86 @@ const track = document.querySelector('.slider-track');
     index = (index - 1 + slides.length) % slides.length;
     updateSlide();
   });
+
+const cursorRing = document.querySelector('.custom-cursor-ring');
+const cursorDot = document.querySelector('.custom-cursor-dot');
+
+if (cursorRing && cursorDot && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+  const interactiveSelector = 'a, button, .btn, input, textarea, select, iframe, [role="button"]';
+  const pointer = { x: -100, y: -100 };
+  const ring = { x: -100, y: -100 };
+
+  function moveCursorElement(element, x, y) {
+    element.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%)`;
+  }
+
+  function animateCursorRing() {
+    ring.x += (pointer.x - ring.x) * 0.18;
+    ring.y += (pointer.y - ring.y) * 0.18;
+    moveCursorElement(cursorRing, ring.x, ring.y);
+    requestAnimationFrame(animateCursorRing);
+  }
+
+  window.addEventListener('mousemove', (event) => {
+    pointer.x = event.clientX;
+    pointer.y = event.clientY;
+    moveCursorElement(cursorDot, pointer.x, pointer.y);
+
+    const isInteractive = event.target.closest(interactiveSelector);
+    cursorRing.classList.toggle('is-hidden', Boolean(isInteractive));
+    cursorDot.classList.toggle('is-hidden', Boolean(isInteractive));
+  });
+
+  document.addEventListener('mouseenter', () => {
+    cursorRing.classList.remove('is-hidden');
+    cursorDot.classList.remove('is-hidden');
+  });
+
+  document.addEventListener('mouseleave', () => {
+    cursorRing.classList.add('is-hidden');
+    cursorDot.classList.add('is-hidden');
+  });
+
+  animateCursorRing();
+}
+
+const glowPalettes = {
+  start: {
+    top: [23, 107, 255],
+    bottom: [255, 123, 2],
+    strength: 0.34
+  },
+  end: {
+    top: [88, 182, 255],
+    bottom: [255, 176, 58],
+    strength: 0.56
+  }
+};
+
+let glowFrame = null;
+
+function blendColor(start, end, progress) {
+  return start.map((value, index) => Math.round(value + (end[index] - value) * progress)).join(' ');
+}
+
+function updateBackgroundGlow() {
+  const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = maxScroll > 0 ? Math.min(window.scrollY / maxScroll, 1) : 0;
+  const strength = glowPalettes.start.strength + (glowPalettes.end.strength - glowPalettes.start.strength) * progress;
+
+  document.body.style.setProperty('--top-glow-rgb', blendColor(glowPalettes.start.top, glowPalettes.end.top, progress));
+  document.body.style.setProperty('--bottom-glow-rgb', blendColor(glowPalettes.start.bottom, glowPalettes.end.bottom, progress));
+  document.body.style.setProperty('--glow-strength', strength.toFixed(2));
+  glowFrame = null;
+}
+
+window.addEventListener('scroll', () => {
+  if (!glowFrame) {
+    glowFrame = requestAnimationFrame(updateBackgroundGlow);
+  }
+}, { passive: true });
+
+updateBackgroundGlow();
 
 </script>
 </body>

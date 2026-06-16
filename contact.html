@@ -20,6 +20,9 @@
 
 </head>
 <body>
+  <div class="custom-cursor-ring" aria-hidden="true"></div>
+  <div class="custom-cursor-dot" aria-hidden="true"></div>
+
   <div class="wrap">
     <div class="logo">
       <!-- PLACE YOUR LOGO HERE -->
@@ -82,5 +85,49 @@
     </footer>
 
   </div>
+
+<script>
+const cursorRing = document.querySelector('.custom-cursor-ring');
+const cursorDot = document.querySelector('.custom-cursor-dot');
+
+if (cursorRing && cursorDot && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+  const interactiveSelector = 'a, button, input, textarea, select, [role="button"]';
+  const pointer = { x: -100, y: -100 };
+  const ring = { x: -100, y: -100 };
+
+  function moveCursorElement(element, x, y) {
+    element.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%)`;
+  }
+
+  function animateCursorRing() {
+    ring.x += (pointer.x - ring.x) * 0.18;
+    ring.y += (pointer.y - ring.y) * 0.18;
+    moveCursorElement(cursorRing, ring.x, ring.y);
+    requestAnimationFrame(animateCursorRing);
+  }
+
+  window.addEventListener('mousemove', (event) => {
+    pointer.x = event.clientX;
+    pointer.y = event.clientY;
+    moveCursorElement(cursorDot, pointer.x, pointer.y);
+
+    const isInteractive = event.target.closest(interactiveSelector);
+    cursorRing.classList.toggle('is-hidden', Boolean(isInteractive));
+    cursorDot.classList.toggle('is-hidden', Boolean(isInteractive));
+  });
+
+  document.addEventListener('mouseenter', () => {
+    cursorRing.classList.remove('is-hidden');
+    cursorDot.classList.remove('is-hidden');
+  });
+
+  document.addEventListener('mouseleave', () => {
+    cursorRing.classList.add('is-hidden');
+    cursorDot.classList.add('is-hidden');
+  });
+
+  animateCursorRing();
+}
+</script>
 </body>
 </html>
