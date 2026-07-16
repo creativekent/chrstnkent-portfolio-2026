@@ -45,8 +45,8 @@
 
     <section class="hero">
 
-      <div class="theme-toggle">
-        <div class="theme-icon" onclick="toggleTheme()">🌙</div>
+      <div class="hero-logo">
+        <img src="Kent.png" alt="Kent">
       </div>
 
       <div class="badge">Kumusta? <span class="wave">👋</span> I’m Christian Kent!</div>
@@ -56,34 +56,6 @@
         <span class="highlight">stories</span> for brands and<br>
         creators<span class="highlight">.</span>
       </h2>
-
-      <div class="stats">
-
-        <div class="stat">
-          <div class="stat-box">6</div>
-          <div>Years of<br>experience</div>
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="stat">
-          <div class="stat-box">369k+</div>
-          <div>Trimmed<br>video clips</div>
-        </div>
-
-        <div class="divider"></div>
-
-        <div class="stat">
-          <div class="stat-box">3k+</div>
-          <div>Cups of coffee<br>consumed</div>
-        </div>
-
-      </div>
-
-      <div class="cta">
-        <a href="contact.html" class="btn btn-primary">Let's Create Something</a>
-        <a href="about.html" class="btn btn-secondary">About</a>
-      </div>
 
       <div class="socials">
         <a href="https://www.linkedin.com/in/chrstnkent/" target="_blank" aria-label="LinkedIn">
@@ -107,6 +79,33 @@
         </a>
       </div>
 
+      <div class="stats">
+
+        <div class="stat">
+          <div class="stat-box">7+</div>
+          <div>Years of<br>experience</div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="stat">
+          <div class="stat-box">400k+</div>
+          <div>Timeline<br>cuts</div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="stat">
+          <div class="stat-box">5k+</div>
+          <div>Cups of coffee<br>consumed</div>
+        </div>
+
+      </div>
+
+      <div class="cta">
+        <a href="about.html" class="btn btn-primary">Get to Know Me</a>
+      </div>
+
       <div class="scroll-text">
         Scroll down to see some of my works <span class="wink">😉</span>
       </div>
@@ -116,7 +115,7 @@
         <div class="albums">
 
           <!-- ALBUM 1 -->
-          <div class="album-card" onclick="toggleAlbum('album1')">
+          <div class="album-card" data-album="album1" role="button" tabindex="0" aria-controls="album1" aria-expanded="false" onclick="toggleAlbum('album1')">
           <div class="album-thumb" style="background-image: url('assets/thumbnails/commercials-thumbnail.png');" ></div>
           <div class="album-overlay">
             <div class="album-title">Commercial</div>
@@ -152,7 +151,7 @@
         </div>
 
         <!-- ALBUM 4 -->
-        <div class="album-card" onclick="toggleAlbum('album4')">
+        <div class="album-card" data-album="album4" role="button" tabindex="0" aria-controls="album4" aria-expanded="false" onclick="toggleAlbum('album4')">
           <div class="album-thumb" style="background-image: url('assets/thumbnails/documentary-thumbnail.png');" ></div>
           <div class="album-overlay">
             <div class="album-title">Documentary</div>
@@ -181,7 +180,7 @@
         </div>
 
         <!-- ALBUM 2 -->
-        <div class="album-card" onclick="toggleAlbum('album2')">
+        <div class="album-card" data-album="album2" role="button" tabindex="0" aria-controls="album2" aria-expanded="false" onclick="toggleAlbum('album2')">
           <div class="album-thumb" style="background-image: url('assets/thumbnails/events-thumbnail.jpg');" ></div>
           <div class="album-overlay">
             <div class="album-title">Events</div>
@@ -191,6 +190,38 @@
         </div>
 
         <div id="album2" class="album-content">
+
+          <p class="album-description">
+
+            A collection of event films, weddings, concerts, festivals, and live
+            productions I've worked on. PS. I didn't edit some of these videos, but I was part of the production team that made them happen.
+
+          </p>
+
+          <iframe 
+            src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1339892757537267%2F&show_text=false&width=560&t=0"
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+          </iframe>
+
+          <iframe 
+            src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1582386906813157%2F&show_text=false&width=560&t=0"
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+          </iframe>
+
+          <iframe 
+            src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F2094003234805467%2F&show_text=false&width=560&t=0"
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+          </iframe>
+
+          <iframe 
+            src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1643262773438184%2F&show_text=false&width=560&t=0"
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+          </iframe>
+
+          <iframe 
+            src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F2088410645044296%2F&show_text=false&width=560&t=0"
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+          </iframe>
 
           <iframe 
             src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FTACLOBANCTOO%2Fvideos%2F1339138997587417%2F&show_text=false&width=560&t=0"
@@ -218,7 +249,7 @@
         </div>
 
         <!-- ALBUM 3 -->
-        <div class="album-card" onclick="toggleAlbum('album3')">
+        <div class="album-card" data-album="album3" role="button" tabindex="0" aria-controls="album3" aria-expanded="false" onclick="toggleAlbum('album3')">
           <div class="album-thumb" style="background-image: url('assets/thumbnails/shorts-thumbnail.png');" ></div>
           <div class="album-overlay">
             <div class="album-title">Social</div>
@@ -235,6 +266,22 @@
           <iframe loading="lazy" src="https://www.youtube.com/embed/hD6fCXO3Ghg?rel=0&modestbranding=1"></iframe>
         </div>
 
+        <!-- ALBUM 5 
+        <div class="album-card" onclick="toggleAlbum('album5')">
+          <div class="album-thumb" style="background-image: url('assets/images/personal-thumbnail.png');" ></div>
+          <div class="album-overlay">
+            <div class="album-title">Personal Videos</div>
+            
+            <div class="album-meta">Projects • Social Contents</div>
+          </div>
+        </div>
+
+        <div id="album5" class="album-content">
+           YOUTUBE SHORT 
+          <iframe loading="lazy" src="https://www.youtube.com/embed/qA6IBhY1DfU?rel=0&modestbranding=1"></iframe>
+              
+        </div> -->
+
       </div>
 
       <!-- TESTIMONIALS -->
@@ -242,17 +289,25 @@
       <div class="testimonials-container">
 
         <div class="testimonial">
-          <p class="testimonial-text">"Christian is one of those people you only need to brief once. On every project we worked on together, he listened closely, asked the right questions, and then executed with no hand-holding required. I trusted him to take the ball and run with it, and he consistently delivered.
-                                      <br>Beyond the work itself, he's just easy to collaborate with: dependable, sharp, and genuinely invested in doing things well. I'd recommend him to anyone looking for someone they can hand a problem to and know it'll get solved.”</p>
-          <div class="testimonial-author">Ryan Chai</div>
+          <p class="testimonial-text">
+            "Christian is one of those people you only need to brief once. On every project we worked on together, he listened closely, asked the right questions, and then executed with no hand-holding required. I trusted him to take the ball and run with it, and he consistently delivered.</p>
+          <p class="testimonial-text">
+            Beyond the work itself, he's just easy to collaborate with: dependable, sharp, and genuinely invested in doing things well. I'd recommend him to anyone looking for someone they can hand a problem to and know it'll get solved.”</p>
+          
+            <div class="testimonial-author">Ryan Chai</div>
           <div class="testimonial-role">Evok Media Group</div>
+
         </div>
 
         <div class="testimonial">
-          <p class="testimonial-text">“Working with Christian feels more like collaborating with a creative partner than managing a freelancer. He quickly understands direction, fills in the gaps on his own, and delivers work that just clicks without needing constant guidance.
-            <br>He’s reliable, easy to work with, and genuinely cares about doing things right. That mix of independence and consistency makes him someone I’d confidently bring into any project.”</p>
-          <div class="testimonial-author">Jionel "Blaze" Carlos</div>
+          <p class="testimonial-text">
+            “Working with Christian feels more like collaborating with a creative partner than managing a freelancer. He quickly understands direction, fills in the gaps on his own, and delivers work that just clicks without needing constant guidance.</p>
+            <p class="testimonial-text">
+              He’s reliable, easy to work with, and genuinely cares about doing things right. That mix of independence and consistency makes him someone I’d confidently bring into any project.”</p>
+              
+            <div class="testimonial-author">Jionel "Blaze" Carlos</div>
           <div class="testimonial-role">Blaze Kultura</div>
+
         </div>
 
       </div>
@@ -274,38 +329,45 @@
   </div>
 
 <script>
-  function toggleTheme() {
-    const body = document.body;
-    const icon = document.querySelector('.theme-icon');
-
-    body.classList.toggle('light');
-
-    if(body.classList.contains('light')) {
-      icon.textContent = '☀️';
-    } else {
-      icon.textContent = '🌙';
-    }
-
-    updateBackgroundGlow();
-  }
-
   lucide.createIcons();
 
+  const albumPanels = [...document.querySelectorAll('.album-content')];
+  const albumCards = [...document.querySelectorAll('.album-card[data-album]')];
+  const albumGrid = document.querySelector('.albums');
+
   function toggleAlbum(id) {
-    document.querySelectorAll('.album-content').forEach(el => {
-      if(el.id === id) {
-        el.classList.toggle('active');
-      } else {
-        el.classList.remove('active');
+    const selectedPanel = document.getElementById(id);
+    if (!selectedPanel) return;
+    const shouldOpen = !selectedPanel.classList.contains('active');
+
+    albumPanels.forEach(panel => {
+      panel.classList.toggle('active', shouldOpen && panel === selectedPanel);
+    });
+
+    albumCards.forEach(card => {
+      const isSelected = shouldOpen && card.dataset.album === id;
+      card.classList.toggle('is-active', isSelected);
+      card.setAttribute('aria-expanded', String(isSelected));
+    });
+
+    albumGrid.dataset.activeAlbum = shouldOpen ? id : '';
+
+  }
+
+  albumCards.forEach(card => {
+    card.addEventListener('keydown', event => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        toggleAlbum(card.dataset.album);
       }
     });
-  }
+  });
 
   const cursorRing = document.querySelector('.custom-cursor-ring');
   const cursorDot = document.querySelector('.custom-cursor-dot');
 
   if (cursorRing && cursorDot && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
-    const interactiveSelector = 'a:not(.video-link), button, .btn, .theme-icon, input, textarea, select, iframe, [role="button"]';
+    const interactiveSelector = 'a:not(.video-link), button, .btn, input, textarea, select, iframe, [role="button"]:not(.album-card)';
     const pointer = { x: -100, y: -100 };
     const ring = { x: -100, y: -100 };
 
@@ -343,30 +405,16 @@
     animateCursorRing();
   }
 
-  const glowPalettes = {
-    dark: {
-      start: {
-        top: [23, 107, 255],
-        bottom: [255, 123, 2],
-        strength: 0.34
-      },
-      end: {
-        top: [88, 182, 255],
-        bottom: [255, 176, 58],
-        strength: 0.56
-      }
+  const glowPalette = {
+    start: {
+      top: [23, 107, 255],
+      bottom: [255, 123, 2],
+      strength: 0.34
     },
-    light: {
-      start: {
-        top: [63, 140, 255],
-        bottom: [255, 154, 46],
-        strength: 0.26
-      },
-      end: {
-        top: [108, 196, 255],
-        bottom: [255, 190, 82],
-        strength: 0.42
-      }
+    end: {
+      top: [88, 182, 255],
+      bottom: [255, 176, 58],
+      strength: 0.56
     }
   };
 
@@ -377,13 +425,12 @@
   }
 
   function updateBackgroundGlow() {
-    const palette = document.body.classList.contains('light') ? glowPalettes.light : glowPalettes.dark;
     const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
     const progress = maxScroll > 0 ? Math.min(window.scrollY / maxScroll, 1) : 0;
-    const strength = palette.start.strength + (palette.end.strength - palette.start.strength) * progress;
+    const strength = glowPalette.start.strength + (glowPalette.end.strength - glowPalette.start.strength) * progress;
 
-    document.body.style.setProperty('--top-glow-rgb', blendColor(palette.start.top, palette.end.top, progress));
-    document.body.style.setProperty('--bottom-glow-rgb', blendColor(palette.start.bottom, palette.end.bottom, progress));
+    document.body.style.setProperty('--top-glow-rgb', blendColor(glowPalette.start.top, glowPalette.end.top, progress));
+    document.body.style.setProperty('--bottom-glow-rgb', blendColor(glowPalette.start.bottom, glowPalette.end.bottom, progress));
     document.body.style.setProperty('--glow-strength', strength.toFixed(2));
     glowFrame = null;
   }
