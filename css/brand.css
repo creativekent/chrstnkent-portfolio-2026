@@ -1,0 +1,134 @@
+/* CK: geometric editorial identity, shared across the portfolio. */
+:root{--paper:#f3f1eb;--ink:#191a18;--muted:#676862;--accent:#676862;--line:#d9d7cf}
+html{scroll-behavior:smooth;scroll-padding-top:24px}
+body{background:var(--paper);color:var(--ink);display:block}
+body::before,body::after{display:none}
+body,body *{cursor:auto}
+a,button,[role="button"],.btn{cursor:pointer}
+.custom-cursor-ring,.custom-cursor-dot{display:none!important}
+a{color:inherit}
+.site-header{width:92%;max-width:1300px;margin:0 auto;padding:28px 0;display:flex;align-items:center;justify-content:space-between;gap:24px;border-bottom:1px solid var(--line);position:relative;z-index:2}
+.brand{display:flex;align-items:center;gap:16px;text-decoration:none;font-size:12px;font-weight:600;letter-spacing:1.4px}
+.brand img{width:56px;height:44px;object-fit:contain;mix-blend-mode:multiply}
+.brand-role{display:block;font-size:9px;letter-spacing:1.1px;color:var(--muted);margin-top:5px}
+.site-header nav{display:flex;gap:32px;align-items:center;font-size:13px}
+.site-header nav a{text-decoration:none;padding:8px 0}
+.site-header nav a:last-child{border-bottom:1px solid var(--ink)}
+.site-header nav a:hover{color:var(--accent)}
+.hero{min-height:0;padding:100px 0 50px;align-items:flex-start;text-align:left;transform:none;position:relative}
+.badge{padding:0;background:none;border-radius:0;color:var(--muted);font-size:14px;margin-bottom:32px;display:flex;gap:12px;align-items:center}
+.tiny-mark{width:12px;height:12px;background:var(--accent);transform:skew(-35deg)}
+.hero h1{font-size:clamp(60px,8.4vw,116px);font-weight:500;line-height:1.02;letter-spacing:-.065em;margin:0;max-width:1000px}
+.hero h1 span{color:var(--muted)}
+.hero-description{max-width:440px;font-size:16px;line-height:1.7;color:var(--muted);margin-top:30px}
+.hero .cta{order:0;justify-content:flex-start;margin-top:30px;gap:12px}
+.btn{border-radius:4px;padding:16px 22px;font-size:13px;display:inline-flex;gap:30px;align-items:center;text-decoration:none;border:1px solid var(--line)}
+.btn-primary{background:var(--ink);color:var(--paper)}
+.btn-primary:hover{background:var(--accent);opacity:1}
+.btn-secondary{color:var(--ink);background:transparent}
+.btn-secondary:hover{background:#e6e3da;color:var(--ink)}
+.hero .stats{order:1;margin-top:70px;max-width:none;justify-content:flex-start;gap:32px;padding-top:24px;border-top:1px solid var(--line)}
+.stat{color:var(--muted);font-size:12px;gap:12px}
+.stat-box{padding:0;background:none;color:var(--ink);font-size:25px;font-weight:500;border-radius:0;letter-spacing:-1px}
+.divider{background:var(--line)}
+.hero .socials{position:absolute;right:0;bottom:105px;gap:8px;margin:0}
+.socials a{color:var(--muted);border-radius:0}
+.socials a:hover{color:var(--accent);transform:translateY(-2px)}
+.scroll-text{order:4;margin-top:40px;font-size:10px;letter-spacing:1.5px;color:var(--muted);display:flex;justify-content:space-between;width:100%}
+.work-section{background:var(--ink);color:var(--paper);padding:72px max(4vw,calc((100vw - 1300px)/2));margin:0 calc((100% - 100vw)/2);scroll-margin-top:0}
+.work-heading{display:flex;justify-content:space-between;gap:32px;align-items:flex-end;margin-bottom:44px}
+.section-label{font-size:10px;letter-spacing:1.8px;color:var(--muted);margin-bottom:22px}
+.work-section .section-label{color:#aaa99f}
+.work-heading h2,.testimonial-heading{font-size:clamp(34px,4vw,54px);font-weight:500;letter-spacing:-2px;line-height:1.1}
+.work-heading>p{font-size:13px;line-height:1.8;color:#aaa99f}
+.albums{margin-top:0;gap:26px}
+.album-card{border-radius:5px;background:#292a27}
+.album-thumb{transition:transform .5s ease}
+.album-card:hover .album-thumb{transform:scale(1.035)}
+.album-overlay{padding:24px;background:linear-gradient(transparent,rgba(0,0,0,.85))}
+.album-title{font-size:24px;font-weight:500;letter-spacing:-.7px}
+.album-title::after{content:'↗';float:right;color:#fff}
+.album-meta{font-size:11px;margin-top:9px;color:#d1d1ca}
+.album-card.is-active{border-color:#aaa99f;box-shadow:none}
+.album-content iframe,.video-thumb{border-radius:4px}
+.testimonials{margin-top:0;padding:90px 0;text-align:left}
+.testimonial-heading{margin-bottom:40px}
+.testimonials-container{max-width:none;gap:40px}
+.testimonial{background:none;padding:28px 0 0;border-radius:0;border-top:1px solid var(--line)}
+.testimonial-text{text-align:left;hyphens:none;font-size:16px;line-height:1.8;color:var(--muted)}
+.testimonial-author{color:var(--ink);margin-top:24px}
+.testimonial-role{color:var(--muted);margin-top:4px}
+.bottom-cta{border-top:1px solid var(--line);margin-top:0;padding:70px 0;text-align:left}
+.bottom-cta-container h3{font-size:clamp(38px,5vw,66px);letter-spacing:-2.5px;font-weight:500}
+.bottom-cta-container p{color:var(--muted)}
+.footer{margin-top:0;border-top:1px solid var(--line);padding:28px 0;text-align:left;color:var(--muted)}
+.footer span{color:var(--ink)}
+.highlight{color:var(--accent)}
+.about-page .wrap{margin:70px auto 0;max-width:1200px}
+.about-page p{color:var(--muted)}
+.about-page h1{font-size:clamp(38px,4.5vw,64px);font-weight:500;letter-spacing:-2.5px;line-height:1.08}
+.about-page .visual{border-radius:5px}
+.about-page .collab{padding:40px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.about-page .collab h3{color:var(--muted)}
+.about-page .journey,.about-page .personal-videos{margin:80px auto;width:92%}
+.about-page .section-heading{text-align:left}
+.about-page .section-heading h2{font-weight:500;letter-spacing:-1.5px}
+.about-page .journey-meta,.about-page .journey-date{color:var(--muted)}
+.about-page .journey-media,.about-page .fp-image,.about-page .fp-video{border-radius:5px}
+.about-page .footer{width:92%;max-width:1300px;margin:auto}
+.contact-page .wrap{margin:80px auto 0;max-width:760px;text-align:left}
+.contact-kicker{font-size:10px;letter-spacing:1.6px;color:var(--muted);margin-bottom:24px}
+.contact-page .name{font-size:clamp(48px,6vw,78px);line-height:1.04;letter-spacing:-3px;color:var(--ink);font-weight:500}
+.contact-page .socials{justify-content:flex-start;gap:12px}
+.contact-text p{color:var(--muted)!important}
+.contact-form{max-width:none;margin-top:20px}
+.contact-form input,.contact-form textarea{border:1px solid var(--line);border-radius:4px;background:#faf9f5;color:var(--ink);padding:18px;font-size:15px}
+.contact-form input:focus,.contact-form textarea:focus{border-color:var(--ink);box-shadow:none}
+.contact-form button{border-radius:4px;background:var(--ink);color:var(--paper);padding:18px}
+.contact-form button:hover{background:var(--accent)}
+.contact-page .back{justify-content:flex-start;margin:30px 0}
+.contact-page .back a{background:none;color:var(--muted);padding:0;border-radius:0;font-size:13px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:5px}
+@media(max-width:768px){.site-header{padding:20px 0}.brand{gap:10px}.brand img{width:42px;height:34px}.brand>span{font-size:10px}.brand-role{display:none}.site-header nav{gap:18px;font-size:12px}.hero{padding-top:65px}.hero h1{font-size:clamp(49px,10vw,76px)}.hero-description{font-size:14px;max-width:360px}.hero .stats{flex-direction:row;gap:24px;align-items:flex-start;flex-wrap:wrap;margin-top:50px}.stat{flex-direction:column;align-items:flex-start;text-align:left;gap:5px;font-size:10px}.stat-box{font-size:22px}.hero .socials{position:static;order:2;margin-top:22px}.scroll-text{margin-top:24px}.work-section{padding-top:50px;padding-bottom:50px}.work-heading{display:block}.work-heading>p{margin-top:22px}.album-title{font-size:22px}.album-meta{font-size:10px}.album-overlay{padding:18px}.testimonials{padding:60px 0}.testimonials-container{gap:28px}.testimonial-text{font-size:14px}.bottom-cta{padding:50px 0}.about-page .wrap{margin-top:40px}.about-page .grid{gap:30px}.contact-page .wrap{margin-top:50px}.contact-page .name{font-size:50px;letter-spacing:-2px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+.brand img{filter:brightness(0)}
+.about-page .journey-copy h3,.about-page .personal-video-card h3{color:var(--ink)}
+.about-page .journey-location{color:var(--muted)}
+.about-page .section-kicker{color:var(--accent)}
+.about-page .journey-placeholder{border-color:var(--line);background:#e8e5dd;color:var(--muted)}
+/* Refinements: full-screen introduction and monochrome palette. */
+.site-header{padding:20px 0;border-bottom:0}
+.hero{min-height:calc(100svh - 84px);padding:50px 0 24px}
+.hero-meta{display:flex;align-items:center;justify-content:space-between;gap:30px;width:100%;border-top:1px solid var(--line);padding-top:24px;margin-top:auto;order:1}
+.hero .cta{margin-bottom:54px}
+.hero .stats{margin:0;padding:0;border:0;width:auto;max-width:none;order:0}
+.hero .socials{position:static;margin:0;order:0;flex-shrink:0}
+.scroll-text{margin-top:28px}
+.album-card:focus-visible{outline-color:#aaa99f}
+.contact-page .footer{margin-top:48px}
+.about-page{--paper:#191a18;--ink:#f3f1eb;--muted:#b2b2aa;--line:#3c3d38;--accent:#b2b2aa}
+.about-page .brand img{filter:brightness(0) invert(1);mix-blend-mode:normal}
+.about-page .wrap{margin-top:48px}
+.about-page .btn-primary:hover{background:#d1d0c8;color:#191a18}
+.about-page .btn-secondary:hover{background:#30312c;color:var(--ink)}
+.about-page .journey-placeholder{background:#252620}
+.about-page>.cta{width:92%;max-width:1300px;justify-content:flex-start;margin:0 auto;padding:20px 0 56px}
+.about-page .logos{background:#f3f1eb;padding:32px 24px;border-radius:4px}
+.about-page .logos img{opacity:1}
+@media(max-width:768px){.site-header{padding:20px 0}.hero{min-height:calc(100svh - 74px);padding-top:35px}.hero .cta{margin-bottom:40px}.hero-meta{flex-wrap:wrap;gap:20px}.hero .stats{flex-direction:row;gap:28px;margin:0}.hero .socials{margin:0;gap:8px}.scroll-text{margin-top:22px}.about-page>.cta{padding-bottom:42px}.about-page .wrap{margin-top:30px}}
+.about-page .logos{background:#2b2c28}
+/* Balance the hero's free space around the introduction. */
+.hero .badge{margin-top:auto}
+.hero-meta{margin-top:auto}
+.testimonial-text{text-align:justify;text-justify:inter-word;hyphens:none}
+.about-page .logos{background:none;padding:12px 0;border-radius:0}
+.about-page .collab h3 .highlight{color:var(--ink);font-weight:600}
+.about-page>.cta{justify-content:center}
+.socials a svg.social-outline{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.socials a svg .phone-mark{fill:currentColor;stroke:none}
+/* Supplied SVG assets inherit the social links' monochrome colour. */
+.social-icon{display:block;width:22px;height:22px;background:currentColor;mask:var(--social-icon) center/contain no-repeat;-webkit-mask:var(--social-icon) center/contain no-repeat}
+.icon-linkedin{--social-icon:url('../assets/icons/linkedin.svg')}
+.icon-instagram{--social-icon:url('../assets/icons/instagram.svg')}
+.icon-whatsapp{--social-icon:url('../assets/icons/whatsapp.svg')}
+.icon-mail{--social-icon:url('../assets/icons/mail.svg')}
