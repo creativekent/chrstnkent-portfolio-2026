@@ -47,7 +47,7 @@ a{color:inherit}
 .album-card:hover .album-thumb{transform:scale(1.035)}
 .album-overlay{padding:24px;background:linear-gradient(transparent,rgba(0,0,0,.85))}
 .album-title{font-size:24px;font-weight:500;letter-spacing:-.7px}
-.album-title::after{content:'↗';float:right;color:#fff}
+.album-title::after{content:'';float:right;width:24px;height:24px;background:currentColor;mask:url('../assets/icons/arrow-up-right.svg') center/contain no-repeat;-webkit-mask:url('../assets/icons/arrow-up-right.svg') center/contain no-repeat}
 .album-meta{font-size:11px;margin-top:9px;color:#d1d1ca}
 .album-card.is-active{border-color:#aaa99f;box-shadow:none}
 .album-content iframe,.video-thumb{border-radius:4px}
@@ -132,3 +132,5 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 .icon-instagram{--social-icon:url('../assets/icons/instagram.svg')}
 .icon-whatsapp{--social-icon:url('../assets/icons/whatsapp.svg')}
 .icon-mail{--social-icon:url('../assets/icons/mail.svg')}
+
+.arrow-icon{width:18px;height:18px;flex-shrink:0;vertical-align:middle}
