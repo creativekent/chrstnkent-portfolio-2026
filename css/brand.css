@@ -134,3 +134,5 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 .icon-mail{--social-icon:url('../assets/icons/mail.svg')}
 
 .arrow-icon{width:18px;height:18px;flex-shrink:0;vertical-align:middle}
+/* Preserve logo proportions with explicit intrinsic image dimensions. */
+.logos img{width:auto}

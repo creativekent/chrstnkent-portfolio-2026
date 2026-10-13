@@ -19,7 +19,7 @@
 </script>
 
 <link rel="stylesheet" href="css/brand.css">
-<link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg?v=ck1">
+<link rel="icon" type="image/png" href="assets/optimized/favicon.png?v=ck2">
 
   <meta property="og:title" content="Let’s Talk | Christian Kent">
   <meta property="og:description" content="Crafting real moments into stories for brands and creators.">
@@ -39,7 +39,7 @@
 </head>
 <body class="contact-page">
 <header class="site-header">
-  <a class="brand" href="index.html" aria-label="Christian Kent home"><img src="assets/logo/CK.png" alt="CK"></a>
+  <a class="brand" href="index.html" aria-label="Christian Kent home"><img src="assets/optimized/ck-dbaac7fa-1280.webp" srcset="assets/optimized/ck-dbaac7fa-640.webp 640w, assets/optimized/ck-dbaac7fa-1280.webp 1280w" sizes="56px" width="1280" height="945" decoding="async" alt="CK"></a>
   <nav aria-label="Main navigation"><a href="index.html#work">Work</a><a href="about.html">About</a><a href="contact.html">Let’s talk <svg class="arrow-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18 18 6M6 6h12v12"/></svg></a></nav>
 </header>
   <div class="custom-cursor-ring" aria-hidden="true"></div>
@@ -97,48 +97,6 @@
 
   </div>
 
-<script>
-const cursorRing = document.querySelector('.custom-cursor-ring');
-const cursorDot = document.querySelector('.custom-cursor-dot');
 
-if (cursorRing && cursorDot && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
-  const interactiveSelector = 'a, button, input, textarea, select, [role="button"]';
-  const pointer = { x: -100, y: -100 };
-  const ring = { x: -100, y: -100 };
-
-  function moveCursorElement(element, x, y) {
-    element.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%)`;
-  }
-
-  function animateCursorRing() {
-    ring.x += (pointer.x - ring.x) * 0.18;
-    ring.y += (pointer.y - ring.y) * 0.18;
-    moveCursorElement(cursorRing, ring.x, ring.y);
-    requestAnimationFrame(animateCursorRing);
-  }
-
-  window.addEventListener('mousemove', (event) => {
-    pointer.x = event.clientX;
-    pointer.y = event.clientY;
-    moveCursorElement(cursorDot, pointer.x, pointer.y);
-
-    const isInteractive = event.target.closest(interactiveSelector);
-    cursorRing.classList.toggle('is-hidden', Boolean(isInteractive));
-    cursorDot.classList.toggle('is-hidden', Boolean(isInteractive));
-  });
-
-  document.addEventListener('mouseenter', () => {
-    cursorRing.classList.remove('is-hidden');
-    cursorDot.classList.remove('is-hidden');
-  });
-
-  document.addEventListener('mouseleave', () => {
-    cursorRing.classList.add('is-hidden');
-    cursorDot.classList.add('is-hidden');
-  });
-
-  animateCursorRing();
-}
-</script>
 </body>
 </html>
