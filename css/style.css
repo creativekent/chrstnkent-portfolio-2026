@@ -443,7 +443,7 @@
       to { opacity:1; transform:translateY(0); }
     }
 
-    .album-content iframe {
+    .album-content iframe:not(.instagram-media) {
       width:100%;
       aspect-ratio:16/9;
       height:auto;

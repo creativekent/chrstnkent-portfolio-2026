@@ -136,3 +136,113 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 .arrow-icon{width:18px;height:18px;flex-shrink:0;vertical-align:middle}
 /* Preserve logo proportions with explicit intrinsic image dimensions. */
 .logos img{width:auto}
+
+/* Local Instagram Reel embed trial. */
+.instagram-reel-preview{width:100%;max-width:326px;justify-self:center;min-width:0}
+.instagram-reel-preview .instagram-media{width:100%!important;min-width:0!important;max-width:100%!important;margin:0!important}
+.album-content .instagram-reel-preview iframe{aspect-ratio:auto;border-radius:3px}
+.album-content .instagram-reel-preview iframe{height:revert}
+
+#album3{align-items:start}
+
+.instagram-link-card{display:block;text-decoration:none;color:#000;width:100%;max-width:460px;background:#fff;border-radius:12px;overflow:hidden;border:1px solid #dedede;box-shadow:0 1px 4px #0000001a;justify-self:center}
+.instagram-card-image{width:100%;aspect-ratio:16/9;background:#f2f2f2;overflow:hidden}
+.instagram-card-image>img{width:100%;height:100%;object-fit:cover;display:block}
+.instagram-card-copy{padding:14px 16px;display:flex;flex-direction:column;gap:6px;font-size:16px;line-height:1.4}
+.instagram-card-label{display:flex;align-items:center;gap:8px;font-size:11px;color:#999;letter-spacing:.5px;text-transform:uppercase}
+.instagram-card-label img{width:15px;height:15px;flex-shrink:0}
+/* Local trial: horizontal Instagram preview cards. */
+.instagram-link-card{display:flex;min-height:140px;align-items:stretch}
+.instagram-card-image{width:140px;flex-shrink:0;align-self:stretch;aspect-ratio:auto;position:relative}
+.instagram-card-image>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.instagram-card-copy{padding:14px;gap:4px;flex:1;min-width:0;justify-content:center}
+.instagram-card-copy>div:nth-child(2){display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+@media(max-width:380px){.instagram-card-image{width:110px}}
+
+/* Portrait link preview reference. */
+.instagram-link-card{aspect-ratio:5/3;min-height:0;max-width:460px}
+.instagram-card-image{width:34%;height:auto;aspect-ratio:9/16}
+.instagram-card-image>img{object-fit:cover}
+.instagram-card-copy{padding:14px;gap:8px}
+.instagram-card-label{gap:7px;flex-wrap:wrap;letter-spacing:.5px;font-size:11px}
+.reel-date{text-transform:none;letter-spacing:0}
+.instagram-colour-icon{display:block;width:15px;height:15px;flex-shrink:0;background:radial-gradient(circle at 25% 100%,#ffdc80,#fcaf45 20%,#f77737 35%,#e1306c 55%,#c13584 65%,#833ab4 80%,#405de6);mask:url('../assets/icons/instagram.svg') center/contain no-repeat;-webkit-mask:url('../assets/icons/instagram.svg') center/contain no-repeat}
+.reel-play{position:absolute;z-index:1;left:50%;top:50%;transform:translate(-50%,-50%);width:34px;height:34px;display:grid;place-items:center;border-radius:50%;background:#0005;color:white}
+.reel-play svg{width:20px;height:20px;margin-left:-3px}
+@media(max-width:380px){.instagram-card-image{width:34%}.instagram-card-copy{padding:10px}.instagram-card-label{font-size:9px;gap:5px}.instagram-card-copy>div:nth-child(2){font-size:14px}}
+/* Match the Instagram link cards to the dark portfolio section. */
+.instagram-link-card{background:#232420;color:#f3f1eb;border-color:#3c3d38;box-shadow:none}
+.instagram-card-label{color:#aaa99f}
+.instagram-link-card:hover{border-color:#77786f;background:#292a25}
+
+.reel-views{display:flex;align-items:center;gap:7px;margin-top:6px;font-size:14px;font-weight:600;color:#f3f1eb}
+.reel-views svg{width:20px;height:20px;flex-shrink:0}
+/* Keep Instagram previews the same size as neighbouring YouTube players. */
+#album3 .instagram-link-card{width:100%;max-width:none;aspect-ratio:16/9;min-height:0;border-radius:4px}
+#album3 .instagram-card-image{width:31.640625%;aspect-ratio:auto;align-self:stretch}
+/* Restrained motion without intercepting wheel or touch scrolling. */
+:root{--motion-ease:cubic-bezier(.22,1,.36,1)}
+.btn,.socials a,.site-header nav a,.instagram-link-card,.slider-btn{transition:transform .25s var(--motion-ease),background-color .25s ease,color .25s ease,border-color .25s ease,box-shadow .25s ease}
+.album-card{transition:transform .35s var(--motion-ease),border-color .3s ease,box-shadow .3s ease}
+.album-thumb,.instagram-card-image>img{transition:transform .6s var(--motion-ease)}
+@media(hover:hover) and (pointer:fine){
+ .btn:hover{transform:translateY(-2px)}
+ .instagram-link-card:hover{transform:translateY(-3px);box-shadow:0 8px 22px #0002}
+ .instagram-link-card:hover .instagram-card-image>img{transform:scale(1.035)}
+ .album-card:hover{transform:translateY(-4px)}
+ .socials a:hover{transform:translateY(-2px)}
+}
+.btn:active,.instagram-link-card:active{transform:translateY(0)}
+.reveal-item{transition:opacity .5s ease,transform .65s var(--motion-ease)}
+.reveal-pending{opacity:0;transform:translateY(16px)}
+::view-transition-old(root),::view-transition-new(root){animation-duration:.22s;animation-timing-function:ease-out}
+@media(prefers-reduced-motion:reduce){.reveal-pending{opacity:1;transform:none}::view-transition-old(root),::view-transition-new(root){animation:none}}
+/* Continuous logo strip, using two identical groups for a seamless loop. */
+.about-page .logo-marquee{display:block;overflow:hidden;padding:24px 0;mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.logo-track{display:flex;width:max-content;animation:logo-drift 32s linear infinite}
+.logo-group{display:flex;align-items:center;justify-content:space-around;gap:48px;width:max(1100px,92vw);flex-shrink:0;padding:0 24px}
+.about-page .logo-group img{width:auto;height:48px;max-width:160px;object-fit:contain;flex-shrink:0;opacity:.85;transform:none}
+.about-page .logo-group img:hover{opacity:1;transform:none}
+.logo-marquee:hover .logo-track,.logo-marquee:focus-within .logo-track{animation-play-state:paused}
+.logo-marquee:focus-visible{outline:1px solid var(--muted);outline-offset:4px}
+@keyframes logo-drift{to{transform:translateX(-50%)}}
+@media(max-width:768px){.logo-group{width:1000px;gap:36px}.about-page .logo-group img{height:40px;max-width:140px}}
+@media(prefers-reduced-motion:reduce){.about-page .logo-marquee{mask-image:none;-webkit-mask-image:none}.logo-track{width:100%;animation:none}.logo-group{width:100%;flex-wrap:wrap;gap:32px;padding:0}.logo-group[aria-hidden="true"]{display:none}}
+.stat-box{font-variant-numeric:tabular-nums;position:relative}
+.stat-box>span[aria-hidden]{display:inline-block;min-width:1ch;white-space:nowrap}
+.stat-readable{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.stat-box::before{content:attr(data-stat-value);visibility:hidden}
+.stat-box>span[aria-hidden]{position:absolute;left:0;top:0}
+/* Theme-neutral cursor; interactive controls retain the native pointer. */
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+ body.cursor-visible{cursor:none}
+ body.cursor-visible .custom-cursor-ring,body.cursor-visible .custom-cursor-dot{display:block!important;opacity:1;mix-blend-mode:difference;transition:none;background:none;box-shadow:none}
+ body.cursor-visible .custom-cursor-ring{width:30px;height:30px;border:1px solid #f3f1eb}
+ body.cursor-visible .custom-cursor-dot{width:5px;height:5px;background:#f3f1eb}
+ .magnetic-button{transition:translate .45s cubic-bezier(.22,1.35,.36,1),transform .25s var(--motion-ease),background-color .25s ease,color .25s ease,border-color .25s ease}
+ .magnetic-button.magnetic-active{transition-duration:.16s,.25s,.25s,.25s,.25s}
+}
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){body.cursor-visible *{cursor:none}}
+
+/* Give the home logo the same tactile response as the buttons. */
+.site-header .brand{border-radius:4px}
+.site-header .brand img{transition:transform .3s var(--motion-ease),opacity .25s ease}
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+ .site-header .brand:hover img{transform:translateY(-2px) scale(1.06);opacity:.85}
+ .site-header .brand:active img{transform:scale(.97);opacity:1}
+}
+/* Fading quotes, retaining the full original testimonials. */
+.testimonials-container.quote-stage{display:grid;grid-template-columns:1fr;max-width:900px;margin:0 auto;gap:0}
+.quote-stage .testimonial{grid-area:1/1;padding:28px 24px 18px;border:0;text-align:center;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(10px);transition:opacity .5s ease,transform .5s var(--motion-ease),visibility .5s}
+.quote-stage .testimonial.quote-active{opacity:1;visibility:visible;pointer-events:auto;transform:none}
+.quote-stage .testimonial-text{font-size:clamp(16px,1.8vw,21px);line-height:1.65;text-align:center;color:var(--ink);letter-spacing:-.3px;margin-bottom:16px}
+.quote-mark{display:block;font-size:72px;line-height:.8;color:var(--muted);margin-bottom:22px;font-family:Georgia,serif}
+.quote-stage .testimonial-author{margin-top:24px;font-size:14px}
+.quote-stage .testimonial-role{font-size:12px;margin-top:6px}
+.quote-controls{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:24px;min-height:44px}
+.quote-dot{padding:0;width:28px;height:28px;background:none;border:0;display:grid;place-items:center}
+.quote-dot::after{content:'';width:6px;height:6px;border-radius:10px;background:var(--line);transition:width .3s ease,background-color .3s ease}
+.quote-dot[aria-pressed="true"]::after{width:22px;background:var(--muted)}
+.quote-pause{background:none;border:1px solid var(--line);border-radius:4px;color:var(--muted);font-size:11px;padding:7px 10px;margin-left:12px}
+@media(max-width:768px){.quote-stage .testimonial{padding:24px 0 12px}.quote-stage .testimonial-text{font-size:16px}}
+@media(prefers-reduced-motion:reduce){.quote-stage .testimonial{transition:none;transform:none}}
